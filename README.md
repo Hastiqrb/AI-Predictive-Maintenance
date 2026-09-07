@@ -97,7 +97,7 @@ The following visualizations were created during the data exploration and model 
 
 ### Correlation Heatmap
 
-![Correlation Heatmap](images/correlation_Heatmap.png)
+![Correlation Heatmap](images/Correlation_Heatmap.png)
 
 ### Machine Failure Distribution
 
