@@ -12,7 +12,7 @@ The project includes an interactive Streamlit dashboard for single-machine predi
 
 Enter machine parameters and receive the predicted failure probability, risk level, prediction result, and maintenance status.
 
-![Single Machine Prediction](images/dashboard.png)
+![Dashboard Preview](images/dashboard.png)
 
 ---
 
