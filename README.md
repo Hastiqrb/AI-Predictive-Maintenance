@@ -1,130 +1,117 @@
-# AI-Powered Predictive Maintenance & Risk Analytics Dashboard
+# AI-Powered Predictive Maintenance & Risk Analytics
 
-An AI-powered dashboard for predicting machine failure and analyzing maintenance risks using machine learning.
+An AI-powered predictive maintenance system that uses machine learning to predict machine failures and estimate failure risk based on operational parameters.
 
-## Overview
+The project combines machine learning, data analysis, and an interactive Streamlit dashboard to provide both individual machine predictions and batch analysis.
 
-This project uses machine learning to predict the probability of machine failure based on operational parameters such as temperature, rotational speed, torque, and tool wear.
+---
 
-The project includes an interactive Streamlit dashboard that supports both single-machine prediction and batch analysis.
+## 🚀 Project Overview
 
-## Dashboard Preview
+Predictive maintenance helps identify machines that are likely to fail before an actual failure occurs.
 
+In this project, a Gradient Boosting model was developed and optimized to predict machine failures using operational parameters such as:
 
+- Air Temperature
+- Process Temperature
+- Rotational Speed
+- Torque
+- Tool Wear
+- Machine Type
 
-## Features
+The final model is integrated into an interactive Streamlit dashboard.
 
-- Single Machine Risk Prediction
-- Failure Probability Estimation
-- Risk Level Classification
-- Batch Machine Analysis using CSV or Excel files
-- Failure Rate Analysis
-- Failure Probability Distribution
-- Risk Level Distribution
-- Feature Importance Visualization
-- Model Performance Metrics
-- Downloadable Batch Prediction Results
+---
 
-## Machine Parameters
+## ✨ Features
 
-The model uses the following input features:
+- Machine failure prediction
+- Failure probability estimation
+- Risk level classification
+- Individual machine analysis
+- Batch machine analysis using CSV or Excel files
+- Interactive dashboard
+- Data exploration and visualization
+- Feature importance analysis
+- Machine learning model comparison
+- Maintenance recommendations based on predicted risk
 
-- Air Temperature [K]
-- Process Temperature [K]
-- Rotational Speed [rpm]
-- Torque [Nm]
-- Tool Wear [min]
-- Machine Type (L, M, H)
+---
 
-## Machine Learning
+## 🖥️ Dashboard
 
-Several classification models were evaluated during the project:
+The application provides an interactive interface for analyzing individual machines and multiple machines at once.
 
-- Logistic Regression
-- Balanced Logistic Regression
-- Random Forest
-- Gradient Boosting
-- Tuned Gradient Boosting
-
-The final model is a **Tuned Gradient Boosting Classifier**.
-
-### Final Model Performance
-
-| Metric | Score |
-|---|---:|
-| Accuracy | 98.47% |
-| Precision | 88.29% |
-| Recall | 63.84% |
-| F1 Score | 73.97% |
-
-The model was tuned using:
-
-- Learning Rate: 0.05
-- Max Depth: 4
-- Number of Estimators: 200
-
-## Feature Importance
-
-The model identified **Torque [Nm]** as the most influential feature for predicting machine failure, followed by rotational speed and tool wear.
-
-![Feature Importance](feature_importance.png)
-
-## Dashboard Analytics
-
-The dashboard provides visual analytics for batch machine predictions, including failure rate, risk levels, and failure probability.
-
-![Dashboard Analytics](dashboard_analytics.png)
-
-## Dashboard
-
-### Single Machine Analysis
+### Single Machine Prediction
 
 Users can enter machine parameters and receive:
 
 - Failure probability
 - Risk level
+- Failure prediction
 - Machine status
 - Maintenance recommendation
 
+![Dashboard Preview](images/dashboard.png)
+
 ### Batch Machine Analysis
 
-Users can upload a CSV or Excel file containing multiple machine records. The application analyzes all machines and provides:
+The dashboard also supports uploading CSV or Excel files containing multiple machines for batch prediction.
 
-- Failure predictions
-- Failure probabilities
-- Risk levels
-- Summary statistics
-- Visual analytics
-- Downloadable prediction results
+![Batch Machine Analysis](images/batch_analysis.png)
 
-## Dataset
+### Dashboard Analytics
 
-This project uses the **AI4I 2020 Predictive Maintenance Dataset**, which contains synthetic industrial machine data designed for predictive maintenance research.
+After performing batch analysis, the dashboard provides visual analytics including:
 
-Dataset features include temperature, rotational speed, torque, tool wear, machine type, and machine failure indicators.
+- Risk level distribution
+- Failure probability distribution
+- Normal vs failure predictions
 
-## Technologies
+![Dashboard Analytics](images/dashboard_analytics.png)
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Joblib
-- Streamlit
+---
 
-## Project Structure
+## 📊 Data Exploration
+
+The dataset was explored and analyzed in the `01_data_exploration.ipynb` notebook.
+
+The analysis includes:
+
+- Dataset structure and dimensions
+- Missing value analysis
+- Class distribution
+- Machine type distribution
+- Statistical analysis
+- Feature relationships
+- Feature importance
+- Model evaluation
+- Confusion matrices
+- Model comparison
+
+The visualizations and analysis used during the machine learning process are available directly in:
+
+`01_data_exploration.ipynb`
+
+---
+
+## 🤖 Machine Learning
+
+Several machine learning models were evaluated:
+
+| Model | Accuracy | Precision | Recall | F1-Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 97.02% | 75.69% | 19.57% | 30.68% |
+| Balanced Logistic Regression | 82.25% | 13.74% | 80.44% | 23.46% |
+| Random Forest | 97.89% | 91.50% | 41.72% | 57.06% |
+| Gradient Boosting | 98.29% | 87.12% | 58.31% | 69.68% |
+| **Tuned Gradient Boosting** | **98.47%** | **88.29%** | **63.84%** | **73.97%** |
+
+The final selected model was **Tuned Gradient Boosting**.
+
+### Best Hyperparameters
 
 ```text
-AI-Predictive-Maintenance/
-│
-├── app.py
-├── 01_data_exploration.ipynb
-├── tuned_gradient_boosting_model.pkl
-├── feature_names.pkl
-├── batch_test.csv
-├── requirements.txt
-├── dashboard.png
-├── feature_importance.png
-├── dashboard_analytics.png
-└── README.md
+learning_rate = 0.05
+max_depth = 4
+n_estimators = 200
