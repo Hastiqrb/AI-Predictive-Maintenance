@@ -119,7 +119,7 @@ The following visualizations were created during the data exploration and model 
 
 ![Tool Wear Distribution by Machine Failure](images/tool_wear_distribution_by_machine_failure.png)
 
-### Torque by Machine Failure
+### Torque Distribution by Machine Failure
 
 ![Torque by Machine Failure](images/torque_by_machine_failure.png)
 
