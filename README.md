@@ -148,7 +148,7 @@ AI-Predictive-Maintenance/
 │   ├── dashboard.png
 │   ├── batch_analysis.png
 │   ├── dashboard_analytics.png
-│   ├── correlation_heatmap.png
+│   ├── Correlation_Heatmap.png
 │   ├── machine_failure_distribution.png
 │   ├── machine_failure_rate_by_product_type.png
 │   ├── model_comparison_using_5_fold_cross_validation.png
